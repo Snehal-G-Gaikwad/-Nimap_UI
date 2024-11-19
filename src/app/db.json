@@ -1,0 +1,38 @@
+{
+  "users": [
+    {
+      "id": "57bb",
+      "firstName": "shree",
+      "age": 38,
+      "interests": [],
+      "addressType": "Home",
+      "address1": "kolhapur",
+      "address2": "",
+      "photo": null
+    },
+    {
+      "id": "adba",
+      "firstName": "sankalp",
+      "age": 25,
+      "interests": [
+        "web developer",
+        "software developer"
+      ],
+      "addressType": "Home",
+      "address1": "kolhapur",
+      "address2": "shirol"
+    },
+    {
+      "id": "41cb",
+      "firstName": "sankalp",
+      "age": 25,
+      "interests": [
+        "web developer",
+        "software developer"
+      ],
+      "addressType": "Home",
+      "address1": "kolhapur",
+      "address2": "shirol"
+    }
+  ]
+}

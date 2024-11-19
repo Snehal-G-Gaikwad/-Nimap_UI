@@ -1,0 +1,44 @@
+.bg-image-container {
+  background: url('/assets/background1.jpg') no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+}
+
+/* Flexbox settings for welcome section */
+.welcome-section {
+  height: 100%; 
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center; 
+  text-align : right; 
+}
+
+.welcome-section h1, 
+.welcome-section p {
+  margin-bottom: 20px;
+}
+
+.welcome-section .btn {
+  margin-top: 10px;
+}
+
+/* Custom Transparent Navbar */
+.custom-navbar {
+  background: rgba(0, 0, 0, 0.5); 
+  backdrop-filter: blur(10px);      
+  border: none;
+}
+
+.custom-navbar .navbar-brand,
+.custom-navbar .nav-link {
+  color: white; 
+}
+
+.custom-navbar .navbar-toggler-icon {
+  background-color: white; 
+}
+
+/* Optional: Adjust navbar links on hover */
+.custom-navbar .nav-link:hover {
+  color: rgba(255, 255, 255, 0.7);
+}

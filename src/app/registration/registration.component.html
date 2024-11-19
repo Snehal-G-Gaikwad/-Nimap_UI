@@ -1,0 +1,92 @@
+<div class="registration-container">
+  <h2 class="text-center">Register</h2>
+
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="firstName">First Name:</label>
+      <input 
+        id="firstName" 
+        formControlName="firstName" 
+        class="form-control" 
+        placeholder="Enter your first name" 
+        [ngClass]="{ 'is-invalid': registrationForm.get('firstName').invalid && registrationForm.get('firstName').touched }"
+      />
+      <div *ngIf="registrationForm.get('firstName').invalid && registrationForm.get('firstName').touched" class="invalid-feedback">
+        First Name is required and should contain only alphabetic characters (max 20 characters).
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="age">Age: <strong>{{ registrationForm.get('age').value }}</strong></label>
+      <input 
+        type="range" 
+        id="age" 
+        formControlName="age" 
+        class="form-control-range" 
+        min="18" 
+        max="100" 
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Interests:</label>
+      <div class="d-flex align-items-center">
+        <input type="text" #interestInput class="form-control" placeholder="Add interest" />
+        <button 
+          type="button" 
+          class="btn btn-outline-primary ml-2" 
+          (click)="addInterest(interestInput.value)">
+          Add
+        </button>
+      </div>
+      <div class="tags mt-2">
+        <span *ngFor="let interest of registrationForm.value.interests; let i = index" class="badge badge-info">
+          {{ interest }} 
+          <button type="button" class="btn btn-sm btn-danger" (click)="removeInterest(i)">x</button>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="addressType">Address Type:</label>
+      <select formControlName="addressType" class="form-control">
+        <option value="Home">Home</option>
+        <option value="Company">Company</option>
+      </select>
+    </div>
+
+    <div *ngIf="registrationForm.get('addressType').value === 'Home'">
+      <div class="form-group">
+        <label for="address1">Address 1:</label>
+        <input formControlName="address1" class="form-control" placeholder="Enter Address 1" />
+      </div>
+      <div class="form-group">
+        <label for="address2">Address 2:</label>
+        <input formControlName="address2" class="form-control" placeholder="Enter Address 2" />
+      </div>
+    </div>
+
+    <div *ngIf="registrationForm.get('addressType').value === 'Company'">
+      <div class="form-group">
+        <label for="address1">Company Address 1:</label>
+        <input formControlName="address1" class="form-control" placeholder="Enter Company Address 1" />
+      </div>
+      <div class="form-group">
+        <label for="address2">Company Address 2:</label>
+        <input formControlName="address2" class="form-control" placeholder="Enter Company Address 2" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="photo">Upload Photo:</label>
+      <input type="file" id="photo" (change)="onFileChange($event)" class="form-control-file" />
+      <div *ngIf="photoPreview" class="text-center mt-2">
+        <img [src]="photoPreview" alt="Photo Preview" class="img-thumbnail" />
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block" [disabled]="registrationForm.invalid">
+      Submit
+    </button>
+  </form>
+</div>

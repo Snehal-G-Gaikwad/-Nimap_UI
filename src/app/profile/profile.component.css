@@ -1,0 +1,47 @@
+/* Container for profile page */
+.profile-container {
+  padding-top: 50px;
+}
+
+/* Profile image styling */
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ccc;
+}
+
+/* Card Styling */
+.card {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile data styling */
+.mb-2 {
+  font-size: 1.1rem;
+}
+
+.interests .badge {
+  font-size: 0.9rem;
+  margin-right: 8px;
+}
+
+.card-header {
+  background-color: #343a40;
+}
+
+.card-body {
+  background-color: #f8f9fa;
+}
+
+/* Edit button */
+.btn-warning {
+  background-color: #ffc107;
+  border: none;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+}
